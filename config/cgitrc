@@ -1,0 +1,7 @@
+
+enable-commit-graph=1
+
+css=/static/cgit.css
+logo=/static/cgit.png
+
+scan-path=/var/cgit-repos

@@ -1,0 +1,9 @@
+version: '2'
+services:
+
+  httpd-cgit:
+    image: httpd-cgit
+    volumes:
+      - ./repos:/var/cgit-repos
+    ports:
+      - "3000:80"

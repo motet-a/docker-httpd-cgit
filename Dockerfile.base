@@ -1,0 +1,11 @@
+FROM httpd
+MAINTAINER Antoine Motet "antoine.motet@epitech.eu"
+
+RUN apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -y \
+       git \
+       liblua5.1-0 \
+       openssl \
+       zlib1g \
+    && rm -r /var/cache/apt/ \
+    && rm -rf /var/lib/apt/lists/*

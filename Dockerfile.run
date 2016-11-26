@@ -1,0 +1,16 @@
+FROM httpd-cgit-base
+
+WORKDIR /usr/local/apache2/cgi-bin/
+ADD build-output/cgit ./cgit.cgi
+
+WORKDIR /usr/local/apache2/htdocs
+ADD build-output/cgit.css .
+ADD build-output/cgit.png .
+ADD build-output/robots.txt .
+ADD build-output/favicon.ico .
+
+WORKDIR /usr/local/apache2/conf
+ADD config/httpd.conf .
+
+WORKDIR /etc/
+ADD config/cgitrc .

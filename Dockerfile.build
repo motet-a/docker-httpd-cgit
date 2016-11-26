@@ -1,0 +1,16 @@
+FROM httpd-cgit-base
+MAINTAINER Antoine Motet "antoine.motet@epitech.eu"
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    liblua5.1-0-dev \
+    libssl-dev \
+    zlib1g-dev \
+    && rm -r /var/cache/apt/
+
+WORKDIR /usr/src/cgit/
+
+ADD scripts/build-cgit.sh .
+
+RUN sh build-cgit.sh
